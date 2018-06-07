@@ -32,7 +32,7 @@ router.put("/api/restaurants/:id", function (req, res) {
 router.delete("/api/restaurants/:id", function (req, res) {
     restaurant.delete(req.params.id, function (response) {
         console.log(response);
-        if (result.affectedRows == 0) {
+        if (response.affectedRows == 0) {
             // If no rows were deleted, then the ID must not exist, so 404
             return res.status(404).end();
         } else {

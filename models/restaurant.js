@@ -23,7 +23,8 @@ restaurant.create = function (restaurantObj, callback) {
 
 restaurant.update = function (id, updateObj, callback) {
     var conditionObj = {"id": id};
-    orm.select("restaurants", conditionObj, updateObj, function (res) {
+    console.log(updateObj);
+    orm.update("restaurants", conditionObj, updateObj, function (res) {
         callback(res);
     });
 };
