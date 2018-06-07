@@ -12,7 +12,7 @@ orm.all = function (table, callback) {
 };
 
 orm.select = function (table, conditionObj, callback) {
-    var queryString = "SELECT * FROM ?? WHERE ?? = ?";
+    var queryString = "SELECT * FROM ?? WHERE ?";
     connection.query(queryString, [table, conditionObj], function (error, result) {
         if (error) throw error;
         callback(result);
@@ -21,6 +21,7 @@ orm.select = function (table, conditionObj, callback) {
 
 orm.create = function (table, newObj, callback) {
     var queryString = "INSERT INTO ?? SET ?";
+    console.log(newObj)
     connection.query(queryString, [table, newObj], function (error, result) {
         if (error) throw error;
         callback(result);

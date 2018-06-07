@@ -16,7 +16,7 @@ restaurant.select = function (selectionObj, callback) {
 };
 
 restaurant.create = function (restaurantObj, callback) {
-    orm.select("restaurants", restaurantObj, function(res) {
+    orm.create("restaurants", restaurantObj, function(res) {
         callback(res);
     });
 };

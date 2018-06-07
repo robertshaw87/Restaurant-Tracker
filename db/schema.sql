@@ -6,7 +6,7 @@ CREATE TABLE restaurants
 (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
-    visited BOOLEAN NOT NULL DEFAULT false,
+    visited BOOLEAN DEFAULT false,
     liked BOOLEAN DEFAULT false,
     PRIMARY KEY (id)
 );

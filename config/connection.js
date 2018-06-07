@@ -12,7 +12,7 @@ if (process.env.JAWSDB_URL) {
         password: "qwerty",
         database: "restaurants_db"
     });
-}
+};
 
 connection.connect(function(err) {
   if (err) {

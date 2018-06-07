@@ -1,0 +1,20 @@
+html {
+    background-color: rgba(50, 50, 50, .9);
+    background-image: url("/assets/images/restaurant-background.jpg");
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+
+body {
+    background-color : rgba(0, 0, 0, 0);
+}
+
+input[type=text] {
+    /* width: 100%; */
+}
+
+#add-restaurant-card {
+    background-color: rgba(50, 50, 50, .9)
+}
