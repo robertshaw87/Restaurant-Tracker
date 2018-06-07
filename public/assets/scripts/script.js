@@ -12,7 +12,8 @@ $(function () {
     $(document).on("click", ".rate-restaurant", function (event) {
         var updateObj = {};
         updateObj.visited = true;
-        updateObj.liked = ($(this).data("liked") === "true");
+        event.preventDefault();
+        updateObj.liked = $(this).data("liked");
         console.log(updateObj);
         $.ajax({
             url: "/api/restaurants/" + $(this).data("id"),
