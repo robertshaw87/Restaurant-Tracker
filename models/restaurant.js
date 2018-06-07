@@ -27,3 +27,7 @@ restaurant.update = function (id, updateObj, callback) {
         callback(res);
     });
 };
+
+restaurant.delete = function (id, callback) {
+    var conditionObj = {"id": id};
+}
