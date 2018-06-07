@@ -30,4 +30,7 @@ restaurant.update = function (id, updateObj, callback) {
 
 restaurant.delete = function (id, callback) {
     var conditionObj = {"id": id};
-}
+    orm.delete("restaurants", conditionObj, function (res) {
+        callback(res);
+    });
+};

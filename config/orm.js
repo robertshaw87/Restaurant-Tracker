@@ -34,3 +34,11 @@ orm.update = function (table, conditionObj, updateObj, callback) {
         callback(result);
     });
 };
+
+orm.delete = function (table, conditionObj, callback) {
+    var queryString = "DELETE FROM ?? WHERE ?";
+    connection.query(queryString, [table, conditionObj], function (error, result) {
+        if (error) throw error;
+        callback(result);
+    })
+}
