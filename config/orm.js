@@ -40,5 +40,5 @@ orm.delete = function (table, conditionObj, callback) {
     connection.query(queryString, [table, conditionObj], function (error, result) {
         if (error) throw error;
         callback(result);
-    })
-}
+    });
+};
