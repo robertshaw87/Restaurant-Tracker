@@ -18,6 +18,7 @@ router.post("/api/restaurants", function (req, res) {
 });
 
 router.put("/api/restaurants/:id", function (req, res) {
+    console.log(JSON.parse(req.body))
     restaurant.update(req.params.id, req.body, function (response) {
         console.log(response);
         if (response.changedRows == 0) {
