@@ -1,4 +1,4 @@
-<div class="jumbotron jumbotron-fluid bg-dark text-light text-center p-2 mb-5">
+<div class="jumbotron jumbotron-fluid text-light text-center p-2 mb-5">
     <div class="container">
         {{!-- <img src="/app/images/survey.gif" alt="Survey Cat" class="m-0 ml-5 float-left" id="survey-cat"> --}}
         <h1 class="display-4">Restaurant Tracker</h1>
@@ -26,33 +26,51 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid text-light">
     <div class="row">
-        <div class="col-12 col-lg mb-3">
+        <div class="col-12 col-lg-4 mb-4">
             <div class="card" id="liked-restaurant-card">
-                <div class="card-header">Liked Restaurants</div>
+                <div class="card-header"><h4>Liked Restaurants</h4></div>
                 <div class="card-body">
-
+                    <div class="card-text">
+                        {{#each restaurants}}
+                            {{#if this.visited}}
+                                {{#if this.liked}}
+                                    {{> restaurants/restaurant-item}}
+                                {{/if}}
+                            {{/if}}
+                        {{/each}}
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-12 col-lg mb-3">
+        <div class="col-12 col-lg-4 mb-4">
             <div class="card" id="unvisited-restaurant-card">
-                <div class="card-header">Unvisited Restaurants</div>
+                <div class="card-header"><h4>Unvisited Restaurants</h4></div>
                 <div class="card-body">
-                    {{#each restaurants}}
-                        {{#unless this.visited}}
-                            {{> restaurants/restaurant-item}}
-                        {{/unless}}
-                    {{/each}}
+                    <div class="card-text">
+                        {{#each restaurants}}
+                            {{#unless this.visited}}
+                                {{> restaurants/restaurant-item}}
+                            {{/unless}}
+                        {{/each}}
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-12 col-lg mb-3">
+        <div class="col-12 col-lg-4 mb-4">
             <div class="card" id="disliked-restaurant-card">
-                <div class="card-header">Disliked Restaurants</div>
+                <div class="card-header"><h4>Disliked Restaurants</h4></div>
                 <div class="card-body">
-
+                    <div class="card-text">
+                        {{#each restaurants}}
+                            {{#if this.visited}}
+                                {{#unless this.liked}}
+                                    {{> restaurants/restaurant-item}}
+                                {{/unless}}
+                            {{/if}}
+                        {{/each}}
+                    </div>
                 </div>
             </div>
         </div>
