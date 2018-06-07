@@ -28,22 +28,29 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col">
+        <div class="col-12 col-lg mb-3">
             <div class="card" id="liked-restaurant-card">
+                <div class="card-header">Liked Restaurants</div>
                 <div class="card-body">
 
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col-12 col-lg mb-3">
             <div class="card" id="unvisited-restaurant-card">
+                <div class="card-header">Unvisited Restaurants</div>
                 <div class="card-body">
-
+                    {{#each restaurants}}
+                        {{#unless this.visited}}
+                            {{> restaurants/restaurant-item}}
+                        {{/unless}}
+                    {{/each}}
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col-12 col-lg mb-3">
             <div class="card" id="disliked-restaurant-card">
+                <div class="card-header">Disliked Restaurants</div>
                 <div class="card-body">
 
                 </div>

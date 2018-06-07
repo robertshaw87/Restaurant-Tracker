@@ -1,15 +1,16 @@
-<div class="mt-2 restaurant-item">
+<div class="mt-2 restaurant-item text-center row">
 	{{#if visited}}
 		{{#if liked}}
-		<button class="btn btn-light delete-restaurant" data-id="{{id}}"><i class="fas fa-trash-alt"></i></button>
-		<h4 class="restaurant-name">{{name}}</h4>
+		<div class="col-2 text-left"><button class="btn btn-light delete-restaurant" data-id="{{id}}"><i class="fas fa-trash-alt"></i></button></div>
+		<div class="col-10 text-right"><h5 class="restaurant-name mr-4 ml-4">{{name}}</h5></div>
 		{{else}}
-		<h4 class="restaurant-name">{{name}}</h4>
-    	<button class="btn btn-light delete-restaurant" data-id="{{id}}"><i class="fas fa-trash-alt"></i></button>
+		<div class="col-10 text-left"><h5 class="restaurant-name mr-4 ml-4">{{name}}</h5></div>
+    	<div class="col-2 text-right"><button class="btn btn-light delete-restaurant" data-id="{{id}}"><i class="fas fa-trash-alt"></i></button></div>
 		{{/if}}
 	{{else}}
-    <button class="btn btn-success rate-restaurant" data-id="{{id}}" data-liked="true"><i class="fas fa-thumbs-up"></i></button>
-	<h4 class="restaurant-name">{{name}}</h4>
-    <button class="btn btn-danger rate-restaurant" data-id="{{id}}" data-liked="false"><i class="fas fa-thumbs-down"></i></button>
+	<button type="button" class="btn btn-success rate-restaurant" data-id="{{id}}" data-liked="true"><i class="fas fa-thumbs-up"></i></button></div>
+	<div class="col-8 text-center"><h5 class="restaurant-name mr-4 ml-4">{{name}}</h5></div>
+    <div class="col-2 text-right"><button type="button" class="btn btn-danger rate-restaurant" data-id="{{id}}" data-liked="false"><i class="fas fa-thumbs-down"></i></button></div>
 	{{/if}}
 </div>
+<hr>
