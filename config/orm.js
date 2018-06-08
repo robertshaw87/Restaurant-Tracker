@@ -1,6 +1,7 @@
 // Import MySQL connection.
 var connection = require("../config/connection.js");
 
+//export orm for use by the model
 var orm = module.exports = {};
 
 orm.all = function (table, callback) {
@@ -21,7 +22,6 @@ orm.select = function (table, conditionObj, callback) {
 
 orm.create = function (table, newObj, callback) {
     var queryString = "INSERT INTO ?? SET ?";
-    console.log(newObj)
     connection.query(queryString, [table, newObj], function (error, result) {
         if (error) throw error;
         callback(result);

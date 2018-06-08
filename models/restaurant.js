@@ -1,6 +1,7 @@
 // Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
 
+//export for use by the controller
 var restaurant = module.exports = {};
 
 restaurant.all = function (callback) {
@@ -23,7 +24,6 @@ restaurant.create = function (restaurantObj, callback) {
 
 restaurant.update = function (id, updateObj, callback) {
     var conditionObj = {"id": id};
-    console.log(updateObj);
     orm.update("restaurants", conditionObj, updateObj, function (res) {
         callback(res);
     });

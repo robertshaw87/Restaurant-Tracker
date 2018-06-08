@@ -4,7 +4,6 @@ $(function () {
             url: "/api/restaurants/" + $(this).data("id"),
             method: "DELETE"
         }).done(function(response) {
-            console.log(response)
             location.reload();
         });
     });
@@ -13,14 +12,13 @@ $(function () {
         var updateObj = {};
         updateObj.visited = true;
         event.preventDefault();
+        // this seperates the thumbs up and thumbs down buttons
         updateObj.liked = $(this).data("liked");
-        console.log(updateObj);
         $.ajax({
             url: "/api/restaurants/" + $(this).data("id"),
             data: updateObj,
             method: "PUT"
         }).done(function(response) {
-            console.log(response)
             location.reload();
         });
     });
